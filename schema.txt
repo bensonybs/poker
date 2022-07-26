@@ -1,0 +1,17 @@
+url:
+/games -> 回傳所有撲克遊戲物件[{}, ]
+/games/?gameId=
+/games/?name=
+/games/:gameId/
+/games/holdem/
+
+
+
+Game[{
+    name: 'Texas Hold'em',
+    name_zh: '德州撲克',
+    gameId: 1,
+    maxPlayer: 10,
+    minPlayer: 2,
+
+},]
