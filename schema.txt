@@ -1,17 +1,25 @@
 url:
 /games -> 回傳所有撲克遊戲物件[{}, ]
-/games/?gameId=
-/games/?name=
-/games/:gameId/
-/games/holdem/
+/games/?gameId= ->回傳該id的撲克遊戲
+/games/?name= ->回傳該名稱的撲克遊戲
+
+/games/holdem[:gameId]/holes ->回傳所有人手牌
+/games/holdem[:gameId]/community ->回傳所有公牌
+/games/holdem[:gameId]/holes/[:playId] ->回傳該玩家手牌
+/games/holdem[:gameId]/holes/[:playId]/combination ->根據公牌及手牌，回傳該玩家最大組合
+
+gameRouter -> holdemRouter -> holeRouter
 
 
-
-Game[{
+Game{
     name: 'Texas Hold'em',
     name_zh: '德州撲克',
     gameId: 1,
     maxPlayer: 10,
     minPlayer: 2,
+}
 
-},]
+Card {
+    suit: 'Spade'
+    rank: '2'
+}

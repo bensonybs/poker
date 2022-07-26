@@ -1,13 +1,16 @@
 const express = require('express');
 const app = express();
-const pokerRouter = require('./routes/poker.js');
+const pokerRouter = require('./routes/poker');
+const gameRouter = require('./routes/game');
 
-
-
-app.use('/cards', pokerRouter);
 app.get('/', (req, res, next) => {
     res.send('<h1>Welcome To The Poker World!</h1>'); 
 });
+app.use('/cards', pokerRouter);
+app.use('/games', gameRouter);
+
+
+
 
 
 
